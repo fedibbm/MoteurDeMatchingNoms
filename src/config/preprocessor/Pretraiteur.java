@@ -1,9 +1,9 @@
-package Config.Preprocessor;
+package config.preprocessor;
 import java.util.* ;
-import  Inputs.Nom;
+import  inputs.Nom;
 public class Pretraiteur {
-    private List<Nom> listeDeNoms ;
-    public List<Nom> nettoyerList ( )   {
+//    private List<Nom> listeDeNoms ;
+    public static List<Nom> nettoyerList (List<Nom> listeDeNoms )   {
         for ( Nom nom : listeDeNoms ){
             List<String> cleanMots = new ArrayList<>();
             for ( String mot : nom.getMots() ){
@@ -14,12 +14,11 @@ public class Pretraiteur {
         }
         return listeDeNoms;
     }
-    public List<Nom> superClean(){
+    public static List<Nom> superClean(List<Nom> listeDeNoms){
         for ( Nom nom : listeDeNoms){
             List<String> cleanMots = new ArrayList<>();
             for ( String mot : nom.getMots() ){
                 cleanMots.add(mot.replaceAll("[^a-zA-Z\\s]", "").toLowerCase().replaceAll("[eyaoui]","" ));
-                // same here this removes the vowels from the names as a type of encoding
 
             }
             nom.setMots(cleanMots) ;
@@ -35,7 +34,7 @@ public class Pretraiteur {
         name.setMots(cleanMots) ;
         return name ;
     }
-    public List<Nom> suprimerVoyelles(){
+    public static List<Nom> suprimerVoyelles(List<Nom> listeDeNoms){
         for ( Nom nom : listeDeNoms){
             List<String> cleanMots = new ArrayList<>();
             for ( String mot : nom.getMots() ){
@@ -47,10 +46,5 @@ public class Pretraiteur {
         }
         return listeDeNoms ;
     }
-    public List<Nom> getListeDeNoms () {
-        return listeDeNoms;
-    }
-    public void setListeDeNoms (List<Nom> listeDeNoms) {
-        this.listeDeNoms = listeDeNoms;
-    }
+
 }

@@ -1,5 +1,5 @@
-package Comparateurs;
-import Inputs.Nom;
+package comparateurs;
+import inputs.Nom;
 
 public class ComparateurDeNomBasique implements ComparateurDeNom {
 //    private ComparateurDeChaine comparateurDeChaine;

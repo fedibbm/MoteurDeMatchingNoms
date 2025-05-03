@@ -1,6 +1,6 @@
-package Config.Indexeur;
+package config.indexeur;
 import java.util.* ;
-import Inputs.Nom ;
+import inputs.Nom ;
 public class Mapper extends Indexeur{
     private List<Nom> listeDeCandidats ;
     public Map<Integer, List<Nom>> indexer (){

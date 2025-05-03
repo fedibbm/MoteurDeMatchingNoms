@@ -1,4 +1,4 @@
-package Inputs;
+package inputs;
 import java.util.*;
 public class Nom {
     private List<String> mots;

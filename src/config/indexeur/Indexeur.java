@@ -1,5 +1,5 @@
-package Config.Indexeur;
-import Inputs.Nom;
+package config.indexeur;
+import inputs.Nom;
 import java.util.*;
 public abstract class Indexeur { //has to be abstract to add an attribute
     List<Nom> liste ;

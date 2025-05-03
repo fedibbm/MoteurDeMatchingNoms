@@ -1,4 +1,4 @@
-package Comparateurs;
+package comparateurs;
 
 public class ComparateurLevenshtein implements ComparateurDeChaine  {
     public double comparer(String s1, String s2) {
