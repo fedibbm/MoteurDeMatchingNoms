@@ -9,7 +9,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Map< Integer, List<Nom>> dict = new HashMap<>();
         ComparateurDeNom comparateur = new ComparateurDeNomSimple();
         Nom nom1 = new Nom();
         Nom nom2 = new Nom();
@@ -24,11 +23,11 @@ public class Main {
         mots1.add("Ahmed");
         mots1.add("bouasba");
         mots2.add("Marouan");
-        mots2.add("bouasba");
+        mots2.add("bouhamed");
         mots3.add("Prix");
         mots3.add("khaled");
         mots4.add("marouane");
-        mots0.add("asba");
+        mots0.add("ben Hemd ");
         nom1.setMots(mots1);
         nom2.setMots(mots2);
         nom2.setMots(mots2);

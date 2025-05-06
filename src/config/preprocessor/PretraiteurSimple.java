@@ -7,7 +7,7 @@
 //        for ( Nom nom : listeDeNoms ){
 //            List<String> cleanMots = new ArrayList<>();
 //            for ( String mot : nom.getMots() ){
-//                mot.replaceAll("[^a-zA-Z\\s]", "").toLowerCase(); //^ means not in regexs, this methods removes all special characters and turns the string to lowercase
+//                mot.replaceAll("[^a-zA-Z\\s]", "").toLowerCase(); //^ means not in regexs, this method removes all special characters and turns the string to lowercase
 //                cleanMots.add(mot) ;
 //            }
 //            nom.setMots(cleanMots) ;

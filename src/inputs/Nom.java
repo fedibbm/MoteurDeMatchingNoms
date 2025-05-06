@@ -2,7 +2,7 @@ package inputs;
 import java.util.*;
 public class Nom {
     private List<String> mots;
-
+    private  int id ;
     public Nom() {
 
         mots = new ArrayList<>();
@@ -26,7 +26,5 @@ public class Nom {
     public String toString() {
         return String.join("", mots);
     }
-    public boolean equals  ( Nom nom ){
-        return mots.equals(nom.mots);
-    }
+
 }
