@@ -1,7 +1,5 @@
-package Selectionneur;
-import comparateurs.ComparateurDeNom;
+package selectionneur;
 import inputs.CoupleAvecScore;
-import moteur.*;
 import inputs.Nom;
 
 import java.util.ArrayList;

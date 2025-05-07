@@ -1,8 +1,7 @@
-import Generateur.GenerateurDeCandidatsParTaille;
-import Selectionneur.SelectionneurSimple;
+import generateur.GenerateurDeCandidatsParTaille;
+import selectionneur.SelectionneurSimple;
 import comparateurs.*;
 import inputs.*;
-import config.indexeur.*;
 import moteur.*;
 
 import java.util.*;
@@ -10,6 +9,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         ComparateurDeNom comparateur = new ComparateurDeNomSimple();
+        ComparateurLevenshtein compLev = new ComparateurLevenshtein();
         Nom nom1 = new Nom();
         Nom nom2 = new Nom();
         Nom nom3 = new Nom();
@@ -19,15 +19,14 @@ public class Main {
         List< String> mots3 = new ArrayList<>();
         List< String> mots4 = new ArrayList<>();
         List< String> mots0= new ArrayList<>();
-
         mots1.add("Ahmed");
-        mots1.add("bouasba");
+        mots1.add("ben mohamed");
         mots2.add("Marouan");
         mots2.add("bouhamed");
-        mots3.add("Prix");
         mots3.add("khaled");
+        mots3.add("smiri");
         mots4.add("marouane");
-        mots0.add("ben Hemd ");
+        mots0.add("ben hmed ");
         nom1.setMots(mots1);
         nom2.setMots(mots2);
         nom2.setMots(mots2);
@@ -43,7 +42,7 @@ public class Main {
         SelectionneurSimple selectionneur = new SelectionneurSimple();
         GenerateurDeCandidatsParTaille generateur = new GenerateurDeCandidatsParTaille();
         MoteurDeRecherche moteur = new MoteurDeRecherche(generateur,comparateur, selectionneur);
+        System.out.println(moteur.search(nom2, listeDeNoms));
         System.out.println(moteur.search(nom0, listeDeNoms));
-
-
-}}
+}
+    }

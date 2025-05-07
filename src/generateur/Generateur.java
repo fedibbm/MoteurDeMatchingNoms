@@ -1,4 +1,4 @@
-package Generateur;
+package generateur;
 
 import inputs.Nom;
 

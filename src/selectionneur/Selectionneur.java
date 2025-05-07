@@ -1,7 +1,6 @@
-package Selectionneur;
+package selectionneur;
 
 import inputs.CoupleAvecScore;
-import inputs.Nom;
 
 import java.util.List;
 

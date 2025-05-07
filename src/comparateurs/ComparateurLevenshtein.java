@@ -14,5 +14,4 @@ public class ComparateurLevenshtein implements ComparateurDeChaine  {
         int maxLen = Math.max(s1.length(), s2.length());
         return 1.0 - (double) dp[s1.length()][s2.length()] / maxLen;
     }
-    // we have to understand the concept this is AI generated!
 }
