@@ -26,5 +26,8 @@ public class Nom {
     public String toString() {
         return String.join("", mots);
     }
+    public void addMot(String mot) {
+        mots.add(mot);
+    }
 
 }
