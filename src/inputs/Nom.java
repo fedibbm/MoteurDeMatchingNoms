@@ -2,7 +2,7 @@ package inputs;
 import java.util.*;
 public class Nom {
     private List<String> mots;
-    private  int id ;
+    private  String id ;
     public Nom() {
         mots = new ArrayList<>();
     }
@@ -19,7 +19,7 @@ public class Nom {
 
     public boolean equals(Object o) {
         Nom nom = (Nom) o;
-        return mots.equals(nom.mots);
+        return id.equals(nom.id);
     }
     public String transformerEnString() {
         return String.join("", mots);
