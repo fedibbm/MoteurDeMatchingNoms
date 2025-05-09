@@ -1,3 +1,6 @@
+import config.preprocessor.NettoyeurDeListe;
+import config.preprocessor.Pretraiteur;
+import config.preprocessor.TransformateurMinuscules;
 import generateur.GenerateurDeCandidatsParTaille;
 import selectionneur.SelectionneurSimple;
 import comparateurs.*;
@@ -8,8 +11,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ComparateurDeNom comparateur = new ComparateurDeNomSimple();
+        ComparateurDeNomSoph comparateur = new ComparateurDeNomSoph();
         ComparateurLevenshtein compLev = new ComparateurLevenshtein();
+        Pretraiteur pretraiteur1 = new NettoyeurDeListe() ;
+        Pretraiteur pretraiteur2 = new TransformateurMinuscules();
         Nom nom1 = new Nom();
         Nom nom2 = new Nom();
         Nom nom3 = new Nom();
@@ -19,13 +24,14 @@ public class Main {
         List< String> mots3 = new ArrayList<>();
         List< String> mots4 = new ArrayList<>();
         List< String> mots0= new ArrayList<>();
-        mots1.add("Ahmed");
-        mots1.add("ben mohamed");
+        mots1.add("marouan");
+        mots1.add("bouhmed");
         mots2.add("Marouan");
-        mots2.add("bouhamed");
+        mots2.add("bou");
+        mots2.add("hamed");
         mots3.add("khaled");
         mots3.add("smiri");
-        mots4.add("marouane");
+        mots4.add("marouane@##@#@#@$$@$@");
         mots0.add("ben hmed ");
         nom1.setMots(mots1);
         nom2.setMots(mots2);
@@ -42,7 +48,11 @@ public class Main {
         SelectionneurSimple selectionneur = new SelectionneurSimple();
         GenerateurDeCandidatsParTaille generateur = new GenerateurDeCandidatsParTaille();
         MoteurDeRecherche moteur = new MoteurDeRecherche(generateur,comparateur, selectionneur);
-        System.out.println(moteur.search(nom2, listeDeNoms));
-        System.out.println(moteur.search(nom0, listeDeNoms));
+        System.out.println(listeDeNoms);
+        listeDeNoms= pretraiteur2.pretraiter(pretraiteur1.pretraiter(listeDeNoms));
+        System.out.println(listeDeNoms);
+        System.out.println(comparateur.comparerNom(listeDeNoms.get(0),listeDeNoms.get(1)));
+        System.out.println(compLev.comparer(listeDeNoms.get(2).transformerEnString(), listeDeNoms.get(1).transformerEnString()));
 }
+
     }

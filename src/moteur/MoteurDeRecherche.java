@@ -20,8 +20,8 @@ public class MoteurDeRecherche {
     }
     public List< Nom > search (Nom cible, List<Nom> liste  ) {
         List< CoupleAvecScore> listCouplesScores = new ArrayList<>();
-        List< Nom> cibleList = new ArrayList<>();
         GenerateurDeCandidatsParTaille generateurParTaille = (GenerateurDeCandidatsParTaille) generateur ;
+        List< Nom> cibleList = new ArrayList<>();
         cibleList.add(cible);
         for (Couple couple : generateurParTaille.generer ( liste, cibleList ) ){
             CoupleAvecScore coupleAvecScore = new CoupleAvecScore( couple , comparateur.comparerNom(couple.nom1(),couple.nom2()));

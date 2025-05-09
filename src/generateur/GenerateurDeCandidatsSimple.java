@@ -3,7 +3,7 @@ import inputs.Couple;
 import inputs.Nom;
 import java.util.ArrayList;
 import java.util.List;
-public class GenerateurDeCandidatsSimple implements Generateur<List<Couple>> {
+public class GenerateurDeCandidatsSimple implements Generateur {
     public List<Couple> generer (List<Nom> liste1  , List<Nom> liste2){
         List<Couple> listeDeTousLesCouples = new ArrayList<>();
         for ( Nom nom1 : liste1){

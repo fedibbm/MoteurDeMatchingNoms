@@ -4,10 +4,8 @@ public class Nom {
     private List<String> mots;
     private  int id ;
     public Nom() {
-
         mots = new ArrayList<>();
     }
-
     public Nom (List<String> mots) {
         this.mots = mots;
     }
@@ -23,11 +21,12 @@ public class Nom {
         Nom nom = (Nom) o;
         return mots.equals(nom.mots);
     }
-    public String toString() {
+    public String transformerEnString() {
         return String.join("", mots);
     }
-    public void addMot(String mot) {
-        mots.add(mot);
+    public String toString (){
+        return String.join(" ", mots);
     }
 
+    public void addMot(String mot) {mots.add(mot);}
 }

@@ -1,9 +1,9 @@
 package generateur;
 
-import inputs.Nom;
+import inputs.*;
 
 import java.util.List;
 
-public interface Generateur<O> {
-   O generer (List<Nom> liste1 , List<Nom> liste2);
+public interface Generateur {
+   List<Couple> generer (List<Nom> liste1 , List<Nom> liste2);
 }
