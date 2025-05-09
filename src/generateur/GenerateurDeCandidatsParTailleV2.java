@@ -11,7 +11,7 @@ import java.util.Map;
 public class GenerateurDeCandidatsParTailleV2 implements Generateur {
     private Indexeur indexeur  ;
     public List<Couple> generer (List<Nom> liste1 , List<Nom> liste2) {
-        List<Couple> listeFinale =gu new ArrayList<>();
+        List<Couple> listeFinale = new ArrayList<>();
         Mapper map = (Mapper) indexeur;
         Map<Integer, List<Nom>> resultatIndexage = new HashMap<Integer,List<Nom>>();
         resultatIndexage = map.indexer(liste2);
