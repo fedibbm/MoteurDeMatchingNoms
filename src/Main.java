@@ -2,6 +2,8 @@ import config.preprocessor.NettoyeurDeListe;
 import config.preprocessor.Pretraiteur;
 import config.preprocessor.TransformateurMinuscules;
 import generateur.GenerateurDeCandidatsParTaille;
+import selectionneur.Selectionneur;
+import selectionneur.SelectionneurDeNPremiers;
 import selectionneur.SelectionneurSimple;
 import comparateurs.*;
 import inputs.*;
@@ -45,7 +47,7 @@ public class Main {
         listeDeNoms.add(nom4);
         Nom nom0 = new Nom();
         listeDeNoms.add(nom1);
-        SelectionneurSimple selectionneur = new SelectionneurSimple();
+        Selectionneur<List<Nom>> selectionneur = new SelectionneurDeNPremiers();
         GenerateurDeCandidatsParTaille generateur = new GenerateurDeCandidatsParTaille();
         MoteurDeRecherche moteur = new MoteurDeRecherche(generateur,comparateur, selectionneur);
         System.out.println(listeDeNoms);
