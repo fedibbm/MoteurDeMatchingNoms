@@ -6,6 +6,8 @@ import selectionneur.*;
 import config.indexeur.Indexeur;
 import config.preprocessor.Pretraiteur;
 import inputs.*;
+
+import java.lang.invoke.CallSite;
 import java.util.*;
 public class MoteurDeRecherche {
     private ComparateurDeNom comparateur ;
@@ -20,18 +22,18 @@ public class MoteurDeRecherche {
     }
     public List< Nom > search (Nom cible, List<Nom> liste  ) {
         List< CoupleAvecScore> listCouplesScores = new ArrayList<>();
-        GenerateurDeCandidatsParTaille generateurParTaille = (GenerateurDeCandidatsParTaille) generateur ;
         List< Nom> cibleList = new ArrayList<>();
         cibleList.add(cible);
-        for (Couple couple : generateurParTaille.generer ( liste, cibleList ) ){
+        for (Couple couple : generateur.generer ( liste, cibleList ) ){
             CoupleAvecScore coupleAvecScore = new CoupleAvecScore(couple,comparateur.comparerNom(couple.nom1(),couple.nom2()));
             listCouplesScores.add (coupleAvecScore);
 
         }
-
-            return (List<Nom>) selectionneur.selectionner(listCouplesScores);
-
+        return (List<Nom>) selectionneur.selectionner(listCouplesScores);
     }
+
+
+
 
 }
 

@@ -1,7 +1,4 @@
 package inputs;
-//
-//public record CoupleAvecScore(Couple coupleDeNoms, double score) {
-//}
 
 public class CoupleAvecScore implements Comparable<CoupleAvecScore>{
      public Couple coupleDeNoms;
