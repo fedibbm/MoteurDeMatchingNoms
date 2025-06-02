@@ -37,7 +37,12 @@ Il permet de configurer dynamiquement les composants suivants :
 ---
 
 ##  Exécution du programme
-
 1. **Compiler le projet**
    ```bash
-   javac -d out src/**/*.java
+javac -d out $(find src -name "*.java")
+```
+2. **Exécution**
+```bash
+java -cp out Main
+```
+
